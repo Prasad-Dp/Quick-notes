@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+{% if messages %}
+                {% for info in messages %}
+                    <!-- Warning Alert -->
+                    <center>
+                    <div class="alert alert-warning alert-dismissible d-flex align-items-center fade show" style="max-width: 35rem; text-align: center; align-self: center;">
+                        <i class="bi-exclamation-triangle-fill"></i>
+                        <strong class="mx-2">{{info}}</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                  </center>
+                {% endfor %}
+          {% endif %}
+          <br>
+          <br>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <center>
+        <div style="max-width: 25rem;">
+            {{form.as_p}}
+            <button type="submit" class="btn btn-primary">Sign up</button> 
+        </div>
+    </center>
+    </form>
+{% endblock content %}

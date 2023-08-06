@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if messages %}
+                {% for info in messages %}
+                    <!-- Warning Alert -->
+                    <center>
+                    <div class="alert alert-warning alert-dismissible d-flex align-items-center fade show" style="max-width: 35rem; text-align: center; align-self: center;">
+                        <i class="bi-exclamation-triangle-fill"></i>
+                        <strong class="mx-2">{{info}}</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                  </center>
+                {% endfor %}
+          {% endif %}
+          <br>
+          <br>
+
+<center>
+    <div  style="max-width: 20rem;">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h2 style="color: white;"> Login</h2>
+        <br>
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+    
+              <label for="exampleInputEmail1" class="form-label" style="color: white;">Username</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="username" required>
+            </div>
+            <div class="mb-3">
+    
+              <label for="exampleInputEmail1" class="form-label" style="color: white;">Password</label>
+              <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+    </div>
+    </center>
+{% endblock content %}
