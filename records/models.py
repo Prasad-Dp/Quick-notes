@@ -7,4 +7,4 @@ class Task(models.Model):
     time_stamp=models.DateTimeField(auto_now_add=True)
     user_profile=models.ForeignKey(User,on_delete=models.CASCADE)
     def __str__(self):
-        return self.Tittle
+        return '%s %s' % (self.Tittle, self.user_profile)

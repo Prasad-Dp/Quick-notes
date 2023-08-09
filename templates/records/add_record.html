@@ -3,10 +3,7 @@
 
 {% if user.is_authenticated %}
 <center>
-    <div  style="max-width: 25rem;">
-        <br>
-        <br>
-        <br>
+    <div  style="max-width: 30rem;">
         <br>
         <br>
         <h2 style="font-family:'Times New Roman', Times, serif;color: white;">Add Task</h2>
@@ -16,11 +13,11 @@
             <div class="mb-3">
     
               <label for="exampleInputEmail1" class="form-label">Tittle</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="tittle">
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="tittle" value="i">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Discription</label>
-                <textarea class="form-control" aria-label="With textarea" name="disc"></textarea>
+                <textarea class="form-control" aria-label="With textarea" name="disc" rows="10"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Add</button>
           </form>

@@ -1,27 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
-
-
 {% if messages %}
-{% for info in messages %}
-    <!-- Warning Alert -->
-    <center>
-    <div class="alert alert-warning alert-dismissible d-flex align-items-center fade show" style="max-width: 35rem; text-align: center; align-self: center;">
-        <i class="bi-exclamation-triangle-fill"></i>
-        <strong class="mx-2">{{info}}</strong>
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    </div>
-  </center>
-{% endfor %}
-{% endif %}
+                {% for info in messages %}
+                    <!-- Warning Alert -->
+                    <center>
+                    <div class="alert alert-warning alert-dismissible d-flex align-items-center fade show" style="max-width: 35rem; text-align: center; align-self: center;">
+                        <i class="bi-exclamation-triangle-fill"></i>
+                        <strong class="mx-2">{{info}}</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                  </center>
+                {% endfor %}
+          {% endif %}
           <br>
           <br>
-
-          {% if user.is_authenticated %}
-         
-            <a href="{% url 'records:add-record' %}" style="text-decoration: none;"> <h3 style="font-family:'Times New Roman', Times, serif; color: white;"> Add Task </h3></a>
-            
-            <center style="margin: 1rem;">
+<center style="margin: 1rem;">
               <div style="max-width: 80rem; ">
                   <table class="table table-hover table-dark bg-dark">
                       <tr>
@@ -61,27 +54,5 @@
                   </table>
                 </div>   
             </center>
-            {% else %}
-            
-          <div class="cover-container d-flex h-100 p-3 mx-auto flex-column" style="background-color:#212529;">
-            <main role="main" class="inner cover">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <h1 class="cover-heading" style="color: white;">Quick Notes</h1>
-            <p class="lead" style="color: white;"> Note Your Daily Tasks...  </p>
-            <p class="lead" style="color: white;"> Create Your free Account Today... </p>
-            <p class="lead">
-            <a href="{% url 'records:login' %}" class="btn btn-lg btn-success">Login</a>
-            <a href="{% url 'records:register' %}" class="btn btn-lg btn-primary">Sign Up</a>
-            </p>
-            </main>
-          </div>
-        {% endif %}
 
-        
 {% endblock content %}
-
